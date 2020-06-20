@@ -158,6 +158,7 @@ def little_to_big_endian(hx,ret='default'):
 	else:
 		invalid_return_type()
 
+big_to_little_endian = little_to_big_endian #;D
 
 def hex_to_bytes(hx):
 	assert is_valid_hex(hx),'Invalid Hex.'
@@ -172,7 +173,7 @@ def hex_to_bytes(hx):
 
 	return bytes.fromhex(hex_str)
 
-unhexlify=hex_to_string
+
 
 
 def hex_to_string(hx):  
@@ -190,6 +191,7 @@ def hex_to_string(hx):
 	string =  ''.join(map(chr,hex_array ))
 	return string	
 
+unhexlify=hex_to_string
 
 def hexarr_to_hexstring(hex_array):
 	assert(type(hex_array) == list) , 'Invalid type'

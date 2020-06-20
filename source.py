@@ -172,7 +172,7 @@ def hex_to_bytes(hx):
 
 	return bytes.fromhex(hex_str)
 
-unhexlify=hex_to_bytes
+unhexlify=hex_to_string
 
 
 def hex_to_string(hx):  

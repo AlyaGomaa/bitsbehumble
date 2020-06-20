@@ -49,7 +49,7 @@ def default_return_type(arg,return_type):
 
 
 def invalid_return_type():
-	raise Exception('Valid return types are either 'int', 'str' or 'list'.')
+	raise Exception("Valid return types are either 'int', 'str' or 'list'.")
 
 
 def string_to_bytes(string,ret='default'):

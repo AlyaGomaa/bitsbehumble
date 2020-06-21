@@ -4,7 +4,6 @@ BitsBeHumble is a lightweight type converter python library. it is designed to m
 Its main purpose is to save you the googling time you spend everytime you need to convert from one type to another, convert endianness or simply convert a binary array to a binary string.
 
 It doesnt support unicode, yet.
-Contribution and pull requests are welcomed.
 
 ```python
 >>> string_to_hex('Hello World!',end='little')

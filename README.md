@@ -91,8 +91,8 @@ default return type: (str)
 ```python
 string_to_binary(string, ret='default')
 ```
-params: ``` string (str)```
-         ``` ret (str)```: 'int', 'str' or 'list'
+params: ``` string (str)
+            ret (str)```: 'int', 'str' or 'list'
          
 default return type: (same as string)   
 
@@ -101,8 +101,8 @@ string_to_hex(string ,end='big',ret='str')
 ```
 can also be called like this: ```hexlify(string ,end='big',ret='str')```
 
-params: ``` string (str)```
-        ```end (str) ```: 'big' or 'little'
+params: ``` string (str)
+            end (str) ```: 'big' or 'little'
         ``` ret (str)```: 'int', 'str' or 'list'
             
             

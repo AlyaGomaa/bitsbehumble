@@ -13,7 +13,7 @@ It doesnt support unicode, yet.
 >>> binary_to_string('0100100001100101011011000110110001101111')
 >>> Hello
 
->>> big_to_little_endian(0x21646c726f57206f6c6c6548)
+>>> little_to_big_endian(0x21646c726f57206f6c6c6548)
 >>> 0x48656c6c6f20576f726c6421
 
 >>> hex_to_binary('0x48656c6c6f20576f726c64',ret='list')

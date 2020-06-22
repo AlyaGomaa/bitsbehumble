@@ -12,21 +12,20 @@ def zero_extend(bin_str):
 
 
 def is_valid_hex(hx):
-	valid_hex= '0123456789abcef'
-	type_=type(hx)
-	if(type_ == int): # hx starts with 0x
-		hex_str = str(hex(hx))[2:]
-	elif(type_ == str ):
-		hex_str = hx
-		if hex_str.startswith('0x'): #hex string
-			hex_str=hx[2:]
-	elif(type_ == list):		
-		hex_str =''.join(hx).replace('0x','')
-	hex_str= hex_str.lower()
-	for x in hex_str:
-		if x not in valid_hex: 
-			return False
-	return True
+	cases = {
+		int: hex,
+		str: str,
+		list: ''.join
+		}
+	
+	if type(hx) not in cases:
+		raise TypeError('Unsupported hex input!')
+	
+	try:
+		int(cases[type(hx)](hx), 16)
+		return True
+	except:
+		return False
 
 
 def is_invalid_binary(b):

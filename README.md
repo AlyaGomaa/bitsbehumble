@@ -4,9 +4,9 @@ BitsBeHumble is a lightweight type converter python library. it is designed to m
 Its main purpose is to save you the googling time you spend everytime you need to convert from one type to another, convert endianness or simply convert a binary array to a binary string.
 
 It doesnt support unicode, yet.
+Contribution and pull requests are welcomed.
 
 ```python
->>> from bitsbehumble import *
 >>> string_to_hex('Hello World!',end='little')
 >>> 0x21646c726f57206f6c6c6548
 
@@ -26,6 +26,10 @@ It doesnt support unicode, yet.
 ```pip install bitsbehumble```
 
 ---
+# Contribution
+
+Pull requests , Ideas  and feedback are welcomed.
+ 
 # Documentation
 
 Naming convetion: ```type_to_type()```.
@@ -40,9 +44,15 @@ Available Endianness: ``` end='big' , end='little' ```
 All functions accept all 3 types of arguments ( int, str, list ) with or without prefixes ('0x' , '0b') unless specified otherwise in the function name, for example:
 
 ```python
-string_to_hex(string ,end='big',ret='str') 
+binstr_to_binarray(bin_str)  
+binarray_to_binstr(bin_arr)
+zero_extend(bin_str)
+is_valid_hex(hx)
+is_invalid_binary(b)
 string_to_binary(string, ret='default')
-etc ..
+hexstring_to_array(hex_str)
+hexarr_to_hexstring(hex_array)
+string_to_hex(string ,end='big',ret='str') 
 ```
 ---
 ### Available Functions
@@ -83,7 +93,7 @@ default return type: (str)
 string_to_binary(string, ret='default')
 ```
 params: ``` string (str)```
-         ```   ret (str)```: 'int', 'str' or 'list'
+         ``` ret (str)```: 'int', 'str' or 'list'
          
 default return type: (same as string)   
 
@@ -92,8 +102,8 @@ string_to_hex(string ,end='big',ret='str')
 ```
 can also be called like this: ```hexlify(string ,end='big',ret='str')```
 
-params: ``` string (str) ```
-```end (str) ```: 'big' or 'little'
+params: ``` string (str)```
+        ```end (str) ```: 'big' or 'little'
         ``` ret (str)```: 'int', 'str' or 'list'
             
             
@@ -190,8 +200,3 @@ is_invalid_binary(b)
 params: ```b (string) ```
 
 default return type: (bool)
-
----
-# Contribution
-
-Pull requests , Ideas  and feedback are welcomed.

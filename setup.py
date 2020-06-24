@@ -10,7 +10,7 @@ my_packages=find_packages()
 setup(
   name = 'bitsbehumble',      
   packages = my_packages,  
-  version = '0.4',      
+  version = '0.5',      
   long_description=long_description,
 
   long_description_content_type="text/markdown", 

@@ -1,10 +1,10 @@
+
 # bitsbehumble
 
 BitsBeHumble is a lightweight type converter python library. it is designed to make CTF scripting a wee bit easier.
-Its main purpose is to save you the googling time you spend everytime you need to convert from one type to another, convert endianness or simply convert a binary array to a binary string.
+Its main purpose is to save you the googling time you spend every time you need to convert from one type to another, convert endianness or simply convert a binary array to a binary string.
 
-It doesnt support unicode, yet.
-Contribution and pull requests are welcomed.
+It doesn't support unicode, yet.
 
 ```python
 >>> string_to_hex('Hello World!',end='little')
@@ -34,9 +34,9 @@ Pull requests , Ideas  and feedback are welcomed.
 
 Naming convetion: ```type_to_type()```.
 
-Default default return type: same type as the first argument unless specified otherwise.
+Default return type: same type as the first argument unless specified otherwise.
 
-Available return types are:```ret='list', ret='int' , ret='str'```.
+Available return types :```ret='list', ret='int' , ret='str'```.
 
 Default Endianness: big-endian 
 Available Endianness: ``` end='big' , end='little' ```
@@ -46,9 +46,6 @@ All functions accept all 3 types of arguments ( int, str, list ) with or without
 ```python
 binstr_to_binarray(bin_str)  
 binarray_to_binstr(bin_arr)
-zero_extend(bin_str)
-is_valid_hex(hx)
-is_invalid_binary(b)
 string_to_binary(string, ret='default')
 hexstring_to_array(hex_str)
 hexarr_to_hexstring(hex_array)
@@ -65,7 +62,6 @@ params: ``` hx(any type)```
          
 default return type: (same as hx)  
 
-
 ```python
 binary_to_hex(b,ret='default')
 ```
@@ -78,7 +74,7 @@ default return type: (same as b)
 hex_to_string(hx)
 ```
 can also be called like this: ```unhexlify(hx)```
-params: ```hx (any type) ```
+params: ```hx (any type) ``` 
 
 default return type: (str)
 
@@ -127,11 +123,19 @@ params: ``` hx (any type)```
 default return type: (same as hx)   
 
 ```python
-zero_extend(bin_str)
+zero_extend(b,n,at='start')
 ```
-works like python's zfill.
+works like python's zfill. 
 
-params: ```bin_str (string) ```
+for binary strings: extends them to a length divisible by 8 if (n) isn't specified.
+if n is specified it adds (n) zeros to the start or the end of the string.
+ 
+for strings: does nothing if (n) isn't specified.
+if n is specified it adds (n) zeros to the start or the end of the string.
+
+params: ```b (string) ```
+``` n (int) ```
+```at (str)```  'start' or 'end'
 
 default return type:  (string)
 
@@ -157,18 +161,26 @@ params: ```bin_arr (list) ```
 default return type: (str)
 
 ```python
+to_binstr(b)
+```
+takes a binary of any type and returns a binary string
+
+params: ```b (any type)```
+
+default return type: (str)
+
+```python
 string_to_bytes(string,ret='default')
 ```
 params: ``` string (str)```
          ``` ret (str)```: 'int', 'str' or 'list'
-         
+   
 default return type: (same as string)      
 
 ```python
 bytes_to_string(b)
-
 ```
-params: ```b (any type) ``` str , int or bytes or list of any type
+params: ```b (any type) ``` : str , int , bytes, bytearray or list of any type.
 
 default return type: (str)
 
@@ -178,14 +190,20 @@ hexstring_to_array(hex_str):
 params: ```hex_str (string) ```
 
 default return type: (list)
+```python
+to_hexstr(hx)
+```
+takes a hex int/str/bytes/list/bytearray and returns the string representation of it
 
+params: ``` hx (any type)```
+
+default return type: (str)
 ```python
 hex_to_bytes(hx)
 ```
 params: ``` hx (any type)```
 
 default return type: (bytes)
-
 
 ```python
 is_valid_hex(hx)
@@ -195,8 +213,18 @@ params: ```hx (any type) ```
 default return type: (bool)
 
 ```python
-is_invalid_binary(b)
+is_valid_binary(b)
 ```
-params: ```b (string) ```
+params: ```b (any type) ```
 
 default return type: (bool)
+
+```python
+getKey(dct,value)
+```
+searches a given dictionary for the key of the given value and returns a list of one or more keys
+
+params: ```dct (dict) ```
+		``` value (any type) ```
+		
+default return type: (list)

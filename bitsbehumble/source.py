@@ -130,7 +130,7 @@ def string_to_binary(string, ret='default'):
 		invalid_return_type()
 
 
-def hexstring_to_array(hex_str):
+def hexstring_to_array(hex_str):  # e.g "0xe56f" >> "['0xe5' , '0x6f']"
 	assert(type(hex_str) == str) , 'Invalid type'
 	if not hex_str.startswith('0x'): 
 			hex_str='0x' + hex_str 

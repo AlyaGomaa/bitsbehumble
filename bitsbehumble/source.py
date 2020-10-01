@@ -230,7 +230,7 @@ def hex_to_string(hx):
 	}
 
 	hex_array = cases[type(hx)](hx)
-	hex_array =  [int(hx,16) for hx in hex_array]
+	hex_array =  [int(str(hx),16) for hx in hex_array]
 	string =  ''.join(map(chr,hex_array ))
 	return string	
 

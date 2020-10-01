@@ -16,7 +16,7 @@ setup(
   long_description_content_type="text/markdown", 
   author = 'Alya Gomaa',  
   url = 'https://github.com/AlyaGomaa/bitsbehumble', 
-  download_url  = 'https://github.com/AlyaGomaa/bitsbehumble/releases/tag/v2.0',
+  download_url  = 'https://github.com/AlyaGomaa/bitsbehumble/releases/tag/v-2.0.01',
 
   keywords = ['CTF', 'Converter'],  
   classifiers=[
